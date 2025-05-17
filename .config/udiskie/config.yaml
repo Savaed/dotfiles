@@ -1,0 +1,8 @@
+program_options:
+  tray: false
+  automount: true
+  notify: true
+  notify_command: "dunstify "
+  notifications:
+    timeout: 2
+    

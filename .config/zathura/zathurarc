@@ -1,0 +1,5 @@
+set selection-clipboard clipboard
+set synctex true
+# set recolor true
+
+include ./catppuccin-mocha

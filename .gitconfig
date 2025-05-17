@@ -1,0 +1,49 @@
+[user]
+    signingkey = 86E6E2DAC5635F42
+	email = 36476874+Savaed@users.noreply.github.com
+	name = Krzysztof Gonet
+[commit]
+	gpgsign = true
+[alias]
+	co = checkout
+	cob = checkout -b
+	c = commit
+	comit = commit
+	s = status
+	sh = stash
+	shpm = stash push -m 
+	sha = stash apply
+	last = log -n 1 HEAD
+	ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	np = log --branches --not --remotes --oneline
+	grpe = grep
+	git = !git
+[completion]
+	commands = -gitk
+[gpg]
+	program = gpg
+[core]
+	editor = nvim
+    pager = delta
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = true
+[init]
+	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[branch]
+	sort = -committerdate
+[rerere]
+	enabled = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

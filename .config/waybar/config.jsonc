@@ -1,0 +1,167 @@
+{
+    "layer": "top",
+    "reload_style_on_change": true,
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/clock"
+    ],
+    "modules-right": [
+        "custom/privacy",
+        "custom/headphones",
+        "custom/updates",
+        "custom/night-light",
+        "network",
+        "bluetooth",
+        "group/hardware",
+        "wireplumber",
+        "battery",
+        "custom/weather",
+        "custom/power-menu"
+    ],
+    "custom/power-menu": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout -b 6 -c 0 -r 0 -m 0"
+    },
+    "custom/night-light": {
+        //"exec": "~/.config/scripts/night-light-indicator.sh",
+        "tooltip": false,
+        "format": "󰃝 ",
+        //"interval": 60,
+        "on-click": "killall hyprsunset || hyprsunset --temperature 1800"
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ],
+        "on-click": "kitty --single-instance btop"
+    },
+    "custom/headphones": {
+        "format": "{}",
+        "tooltip": false,
+        "interval": 2,
+        "exec": "~/.config/scripts/headphones-indicator.sh"
+    },
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "rofi -show drun -replace -i"
+    },
+    "hyprland/workspaces" : {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "",
+        "format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+        },
+        "persistent-workspaces": {
+            "*": 6
+        }       
+    },
+    "hyprland/window": {
+        "max-length": 40
+    },
+    "custom/separator": {
+        "format": " | ",
+        "tooltip": false
+    },
+    "custom/updates": {
+        "interval": 900,  // 15 min
+        "format": "{}",
+        "exec": "~/.config/scripts/check-updates.sh",
+        "tooltip": true,
+        "return-type": "json"
+    },
+    "custom/clock": {
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/scripts/datetime.sh",
+        "format": "<b>{}</b>"
+    },
+    "custom/privacy": {
+        "interval": 2,
+        "exec": "~/.config/scripts/privacy.sh",
+        "tooltip": true,
+        "return-type": "json"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%"
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {percentage}%"
+    },
+    "disk": {
+        "interval": 60,
+        "format": "󰆼 {free}"
+    },
+    "custom/weather": {
+        "interval": 300,  // 5min
+        //"exec": "~/.config/scripts/check_weather.py --lat 50.05 --lon 19.95 | jq --unbuffered --compact-output",
+        "exec": "~/.config/scripts/check_weather.py --lat 49.7 --lon 21.8 | jq --unbuffered --compact-output",
+        "tooltip": true,
+        "return-type": "json"
+    },
+    "wireplumber": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "tooltip-format": "{node_name} {volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "network": {
+        // "interface": "wlp2s0",
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "",
+        "format-disconnected": "󱞐",
+        "format-disabled": "󱞐",
+        "tooltip-format": "{ipaddr} on {ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} {frequency}GHz {signalStrength}%\n\n({ifname}) {ipaddr} via {gwaddr}",
+        "tooltip-format-ethernet": "({ifname}) {ipaddr} via {gwaddr}",
+        "tooltip-format-disconnected": "disconnected",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "max-length": 50,
+        "on-click": "kitty --single-instance nmtui"
+    },
+    //     "format-en": "us",
+    //     "format-pl": "pl"
+    // },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-off": "󰂲", // an empty format will hide the module
+        "format-connected": "",
+        "on-click": "blueman-manager",
+        "tooltip-format": "{controller_alias} -> sadf {controller_address}",
+        "tooltip-format-connected": "controller: {controller_alias} -> {controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} -> {device_address}"
+    },
+    "battery": {
+        // "bat": "BAT2",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}% {time}",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    }
+}

@@ -1,0 +1,98 @@
+* {
+    font: "Ubuntu Nerd Font Medium 12";
+    g-spacing: 10px;
+    dark-fg-color: #848484;
+    g-margin: 0;
+    bg-color: black;
+    fg-color: #d9d9d9;
+    b-radius: 8px;
+    g-padding: 8px;
+    hl-color: #393939;
+    w-border: none;
+    w-padding: 12px;
+}
+
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    display-drun: "";
+}
+
+listview {
+    columns: 1;
+    lines: 10;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    border: none;
+}
+
+window {
+    transparency: "none";
+    width: 450px;
+    border-radius: 8px;
+    background-color: @bg-color;
+    border: @w-border;
+    padding: @w-padding;
+}
+
+prompt {
+    text-color: @fg-color;
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: @g-spacing;
+}
+
+entry {
+    placeholder: "Search clipboard history";
+    text-color: @fg-color;
+    placeholder-color: @dark-fg-color;
+}
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    border: 0px solid;
+    border-radius: @b-radius;
+    border-color: @bg-color;
+    background-color: inherit;
+    text-color: @fg-color;
+}
+
+element normal.normal {
+	background-color: inherit;
+	text-color: @dark-fg-color;
+}
+
+element alternate.normal {
+	background-color: inherit;
+	text-color: @dark-fg-color;
+}
+
+element selected.active {
+	background-color: inherit;
+	text-color: white;
+}
+
+element selected.normal {
+	background-color: @hl-color;
+	text-color: white;
+}
+
+message {
+    background-color: red;
+    border: 0px solid;
+}
+
+

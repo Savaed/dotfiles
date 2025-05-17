@@ -1,0 +1,153 @@
+@import "./colors.css";
+
+@define-color base #d9d9d9;
+@define-color custom_gray #393939;
+@define-color red #C4381A;
+
+* {
+  font-family: Ubuntu Nerd Font;
+  font-size: 17px;
+  font-weight: 500;
+  color: @base;
+  padding: 1px 3px;
+}
+
+tooltip {
+  background: black;
+  border-radius: 8px;
+}
+
+window#waybar {
+  background: black;
+}
+
+button:hover {
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
+}
+
+#workspaces button {
+  padding: 0;
+}
+
+#workspaces button label {
+  color: @accent;
+}
+
+#workspaces button:hover {
+  opacity: 0.6;
+  transition: opacity 300ms ease-in-out;
+}
+
+#workspaces button.empty label {
+  opacity: 0.4;
+  color: @accent;
+}
+
+#workspaces button.active label {
+  font-size: 0px;
+  background: @accent;
+  margin: 6px 0;
+  border-radius: 8px;
+  min-width: 30px;
+  opacity: 1;
+  /* transition: min-width 300ms ease-in-out; */
+}
+
+/* #window { */
+/*     border-bottom: 3px solid transparent; */
+/*     padding-left: 10px; */
+/* } */
+
+#memory,
+#disk,
+#custom-updates,
+#custom-weather,
+#custom-headphones,
+#bluetooth,
+#wireplumber,
+#cpu {
+  margin: 0 4px;
+  /* opacity: 1; */
+}
+
+#custom-clock {
+  padding: 0 10px;
+  margin: 2px;
+  border-radius: 15px;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-clock:hover {
+  background: @custom_gray;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-privacy {
+  background: @red;
+  margin: 2px 4px;
+  padding: 0 10px;
+  border-radius: 15px;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-arch {
+  transition: opacity 300ms ease-in-out;
+}
+
+#custom-arch:hover {
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+
+#window {
+  background: @custom_gray;
+  margin: 2px 4px;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+
+#custom-privacy:hover {
+  background: @custom_gray;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-arch {
+  font-size: 22px;
+  color: #3ad;
+}
+
+#hardware {
+  border-radius: 15px;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-clock:hover {
+  background: @custom_gray;
+  transition: background 300ms ease-in-out;
+}
+
+#custom-power-menu {
+  color: @red;
+  transition: opacity 300ms ease-in-out;
+}
+
+#custom-power-menu:hover {
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* #language { */
+/*     padding: 0 10px; */
+/*     margin: 0 2px; */
+/* } */
+
+/* #custom-logout { */
+/*     color: @red; */
+/*     border-bottom: 3px solid @red;  */
+/*     padding: 0 10px; */
+/*     margin: 0 4px 0 2px; */
+/* } */
